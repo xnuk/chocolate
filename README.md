@@ -39,6 +39,6 @@ mise run format
   구현체를 참고 및 사용했습니다.
 - 이 소스코드는 [AGPL 3.0](./LICENSE)로 배포됩니다.
 
-[Inconsolata]: https://levien.com/type/myfonts/inconsolata.html
+[Inconsolata]: https://github.com/googlefonts/Inconsolata
 [SIL Open Font License]: https://openfontlicense.org/
 [백준 25800번 초콜릿 프로그래밍 언어]: https://www.acmicpc.net/problem/25800
