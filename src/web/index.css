@@ -1,0 +1,176 @@
+@font-face {
+	font-family: 'Inconsolata';
+	src:
+		local('Inconsolata'),
+		local('Inconsolata Mono'),
+		url('./Inconsolata.subset.woff2') format('woff2');
+	unicode-range: U+0-7F;
+}
+
+@layer base, palette, main;
+@layer base {
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0 solid;
+		box-sizing: border-box;
+	}
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+	b,
+	strong {
+		font-weight: bolder;
+	}
+	table {
+		text-indent: 0;
+		border-color: inherit;
+		border-collapse: collapse;
+	}
+	button,
+	input,
+	select,
+	textarea {
+		font: inherit;
+		font-feature-settings: inherit;
+		font-variation-settings: inherit;
+		letter-spacing: inherit;
+		color: inherit;
+		border-radius: 0;
+		background-color: transparent;
+		opacity: 1;
+	}
+	::placeholder {
+		opacity: 1;
+	}
+	button {
+		appearance: button;
+	}
+	ol,
+	ul {
+		list-style: none;
+	}
+	html {
+		font-size: 100%;
+		line-height: 1.5;
+	}
+}
+
+@layer palette {
+	:root {
+		--fg: #111827;
+		--bg: #f3f4f6;
+		--highlight-bg: #93c5fd;
+		--bg-gray: #d1d5db;
+		--gray: #6b7280;
+	}
+}
+
+@layer main {
+	body {
+		background-color: var(--bg);
+		font-color: var(--fg);
+	}
+
+	main {
+		padding: 1rem;
+	}
+
+	.editing {
+		& > #source {
+			display: block;
+		}
+		& > #source-view,
+		& > #run,
+		& > #output {
+			display: none;
+		}
+	}
+
+	.running {
+		& > #source {
+			display: none;
+		}
+		& > #source-view,
+		& > #run,
+		& > #output {
+			display: block;
+		}
+	}
+
+	#source,
+	#source-view {
+		font-family: Inconsolata, monospace;
+		line-height: 1;
+		min-width: 40ch;
+		min-height: 20lh;
+	}
+
+	#source-view > span {
+		white-space: pre;
+		&.active {
+			background-color: var(--highlight-bg);
+		}
+	}
+
+	#source,
+	#input,
+	#source-view {
+		border: 1px solid var(--fg);
+		padding: 0.25rem;
+		white-space: nowrap;
+	}
+
+	#source-view {
+		overflow: auto;
+	}
+
+	#input {
+		min-width: 40ch;
+		min-height: 3lh;
+	}
+
+	#button-row {
+		padding: 0.5rem 0;
+	}
+
+	#button-row > button {
+		background-color: var(--bg-gray);
+		transition: background-color 0.2s;
+		cursor: pointer;
+		padding: 0.25rem 0.75rem;
+		border-radius: 0.25rem;
+
+		&:not(:disabled):hover {
+			background-color: var(--gray);
+		}
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+
+	#stack {
+		font-family: Inconsolata, monospace;
+		height: 1.5lh;
+
+		&::before {
+			content: '스택: ';
+			height: 100%;
+			display: inline-block;
+			align-content: center;
+		}
+
+		& > li {
+			height: 100%;
+			display: inline-block;
+			padding: 0 0.5rem;
+			align-content: center;
+
+			&:not(:first-child) {
+				border-left: 1px solid var(--bg-gray);
+			}
+		}
+	}
+}

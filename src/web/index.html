@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>초콜릿 프로그래밍 언어</title>
+	<link rel="stylesheet" href="./index.css" />
+	<script type="module" src="./index.ts"></script>
+	<body>
+		<main class="editing">
+			<textarea id="source" spellcheck="false" autofocus></textarea>
+			<div id="source-view"></div>
+			<div id="button-row">
+				<button id="button-next">다음</button>
+				<button id="button-run">실행</button>
+				<button id="button-stop" disabled>중지</button>
+			</div>
+			<div id="run">
+				<div id="run-metadata"></div>
+				<ul id="stack"></ul>
+			</div>
+			<div id="error"></div>
+			<textarea id="input" placeholder="입력 (stdin)"></textarea>
+			<pre id="output"></pre>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn",
+		"pedantic": "warn",
+		"perf": "error",
+		"style": "error",
+		"restriction": "warn"
+	},
+	"rules": {
+		"curly": ["error", "multi-or-nest", "consistent"],
+		"typescript/strict-boolean-expressions": [
+			"error",
+			{
+				"allowAny": false,
+				"allowNullableBoolean": false,
+				"allowNullableEnum": false,
+				"allowNullableNumber": false,
+				"allowNullableObject": false,
+				"allowNullableString": false,
+				"allowNumber": false,
+				"allowString": false
+			}
+		],
+		"typescript/parameter-properties": "off",
+		"no-magic-numbers": "off",
+		"no-ternary": "off",
+		"import/no-named-export": "off",
+		"import/prefer-default-export": "off",
+		"oxc/no-async-await": "off",
+		"sort-keys": "off",
+		"sort-imports": "off",
+		"exports-last": "off",
+		"unicorn/prefer-top-level-await": "off",
+		"unicorn/prefer-query-selector": "off",
+		"unicorn/no-null": "off",
+		"explicit-function-return-type": "off",
+		"import/group-exports": "off",
+		"import/no-relative-parent-imports": "off",
+		"prefer-destructuring": "off",
+		"eqeqeq": ["error", "always", { "null": "ignore" }],
+		"no-eq-null": "off",
+		"max-statements": "off",
+		"oxc/no-optional-chaining": "off",
+		"no-negated-condition": "off",
+		"import/no-unassigned-import": "off",
+		"no-continue": "off",
+		"typescript/no-unsafe-type-assertion": "off",
+		"typescript/non-nullable-type-assertion-style": "off",
+		"typescript/no-misused-spread": "off"
+	},
+	"plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "promise"]
+}

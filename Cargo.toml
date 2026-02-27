@@ -1,0 +1,22 @@
+[workspace]
+resolver = '2'
+members = ['src/chocolate', 'src/wasm']
+
+[workspace.package]
+version = '0.1.0'
+edition = '2024'
+license = 'AGPL-3.0-or-later'
+
+[workspace.dependencies]
+wasm-bindgen = '0.2.114'
+thiserror = '2.0.18'
+anyhow = '1.0.101'
+
+[profile.release-minified]
+inherits = 'release'
+opt-level = 'z'
+overflow-checks = false
+panic = 'abort'
+strip = true
+lto = true
+codegen-units = 1
