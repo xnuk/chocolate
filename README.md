@@ -27,6 +27,7 @@ mise run build:web
 # Install devDependencies - oxfmt, oxlint, typescript
 mise run dev-install
 
+# Linting and formatting
 mise run lint
 mise run format
 ```
