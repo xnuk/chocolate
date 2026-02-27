@@ -95,7 +95,7 @@ class State {
 		const currentCmd = String.fromCodePoint(this.chocolate.next_cmd())
 		const currentLen = this.chocolate.next_len()
 
-		let metadata = `현재 명령: ${displayCmd(currentCmd, currentLen)}`
+		let metadata = `현재 명령: ${displayCmd(currentCmd, currentLen).padEnd(5)}`
 
 		const error = this.chocolate.step()
 		if (error.length === 0) {

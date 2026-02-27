@@ -164,8 +164,13 @@
 		}
 	}
 
+	#run-metadata {
+		font-family: Inconsolata;
+		white-space: pre;
+	}
+
 	#stack {
-		font-family: Inconsolata, monospace;
+		font-family: Inconsolata;
 		height: 1.5lh;
 
 		&::before {
