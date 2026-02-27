@@ -37,3 +37,12 @@ run = 'bun run ./serve.ts'
 
 [tasks.'build:exe']
 run = 'cargo build -p chocolate --release'
+
+[tasks.dev-install]
+run = 'bun install'
+
+[tasks.lint]
+run = 'bun run lint'
+
+[tasks.format]
+run = 'bun run format'
