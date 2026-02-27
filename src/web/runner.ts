@@ -67,6 +67,10 @@ class State {
 		this.codeMap = codeMap
 	}
 
+	get finished() {
+		return this.chocolate.finished
+	}
+
 	/// returns step is successed
 	// oxlint-disable-next-line max-lines-per-function
 	step(): boolean {
@@ -205,21 +209,32 @@ const toRunning = () => {
 }
 
 const step = (): boolean => {
-	if (globalState == null) toRunning()
 	if (globalState == null) return false
 	return globalState.step()
 }
 
 buttonNext.addEventListener('click', () => {
-	step()
+	if (globalState == null) toRunning()
+	if (!step()) {
+		buttonNext.disabled = true
+		buttonRun.disabled = true
+	}
 })
 
 buttonRun.addEventListener('click', () => {
 	if (stopRunning == null) {
+		if (globalState == null) toRunning()
+
 		let interval = 0
 		const stop = () => {
 			clearInterval(interval)
 			stopRunning = null
+
+			if (globalState != null && globalState.finished) {
+				buttonNext.disabled = true
+				buttonRun.disabled = true
+				buttonRun.textContent = '실행'
+			}
 		}
 		interval = setInterval(() => {
 			if (!step()) stop()
