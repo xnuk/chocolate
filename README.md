@@ -1,6 +1,8 @@
 # https://chocolate.xnu.kr
 [백준 25800번 초콜릿 프로그래밍 언어]의 Rust 구현체이자 웹 구현체입니다.
 
+<img width="426" height="556" alt="image" src="https://github.com/user-attachments/assets/40d3a462-a9d0-46f4-9996-3ae97ca22fce" />
+
 ## Build/Contributing
 ### 준비물
 - [mise](https://mise.jdx.dev/)
