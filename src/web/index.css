@@ -58,9 +58,15 @@
 	:root {
 		--fg: #111827;
 		--bg: #f3f4f6;
-		--highlight-bg: #93c5fd;
-		--bg-gray: #d1d5db;
-		--gray: #6b7280;
+		--highlight-bg: rgba(59, 130, 246, 0.75);
+		--bg-gray: rgba(115, 115, 115, 0.5);
+		--gray: #737373;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--fg: #f3f4f6;
+			--bg: #111827;
+		}
 	}
 }
 
@@ -119,6 +125,16 @@
 		white-space: nowrap;
 	}
 
+	#source,
+	#input,
+	#source-view,
+	#run,
+	#error,
+	#output,
+	#button-row > button {
+		color: var(--fg);
+	}
+
 	#source-view {
 		overflow: auto;
 	}
@@ -153,7 +169,7 @@
 		height: 1.5lh;
 
 		&::before {
-			content: '스택: ';
+			content: "스택: ";
 			height: 100%;
 			display: inline-block;
 			align-content: center;
