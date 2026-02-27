@@ -1,3 +1,4 @@
+# https://chocolate.xnu.kr
 [백준 25800번 초콜릿 프로그래밍 언어]의 Rust 구현체이자 웹 구현체입니다.
 
 ## Build/Contributing
