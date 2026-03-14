@@ -9,7 +9,7 @@
 		"restriction": "warn"
 	},
 	"rules": {
-		"curly": ["error", "multi-or-nest", "consistent"],
+		"curly": ["error", "multi-line", "consistent"],
 		"typescript/strict-boolean-expressions": [
 			"error",
 			{
